@@ -1,0 +1,22 @@
+#This file is inside a folder named 'dock' at the root of my laravel project
+version: "3.2"
+services:
+    #PHP with apache
+    customer-manager:
+      #image will be built by processing the Dockerfile in this path
+      build: .
+      container_name: lara_cont
+      command:
+        sh ../dock-files/startup.sh
+      ports:
+        - "8080:80"
+      environment:
+        XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=9000 remote_enable=1
+      #map host folders (relative to this file) to service
+      volumes:
+        - ./public/:/var/www/html
+        - ./:/var/www
+      restart:
+        always
+volumes:
+    db_data:

@@ -5,15 +5,24 @@ RUN apt-get update && apt-get install -qqy git unzip libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
         default-mysql-client \
-        nodejs \
         dos2unix \
         libaio1 wget && apt-get clean autoclean && apt-get autoremove --yes &&  rm -rf /var/lib/{apt,dpkg,cache,log}/
+
+#get node js
+RUN apt-get -y install curl gnupg
+RUN curl -sL https://deb.nodesource.com/setup_11.x  | bash -
+RUN apt-get -y install nodejs
+RUN npm cache clean --force
+#@todo : npm install isnt workign properly
+RUN npm --prefix /var/www install
 
 #composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 #RUN composer install --no-scripts --no-autoloader
+#CMD bash -c "composer install"
 
-RUN npm install
+#RUN cd /var/www/ && \
+#RUN cd .. && composer install --no-interaction
 
 # get php code sniffer
 RUN wget -O /tmp/phpcs.phar https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar

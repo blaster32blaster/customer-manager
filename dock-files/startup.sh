@@ -18,8 +18,15 @@ else
 fi
 echo "startup script run, removing existing git hooks ..."
 rm ../.git/hooks/*
-echo "hooks removed, creating new hooks"
+echo "existing hooks removed, creating new hooks"
 cp -r ../dock-files/hooks/* ../.git/hooks/
 chmod +x ../.git/hooks/*
+
+echo "hooks created, installing composer and npm dependencies"
+cd /var/www
+composer install
+npm install
+
+echo "dependencies installed, starting web server"
 apachectl -D FOREGROUND
 

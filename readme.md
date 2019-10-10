@@ -1,5 +1,15 @@
 # Customer Manager
 
-## Installation
+## Docker Instructions
+- clone package git@github.com:blaster32blaster/customer-manager.git
+- navigate to root project directory
+- Run Command : docker-compose up
+- navigate to http://localhost:8080
 
-## Operation
+## Other build and web serving instructions
+- clone package git@github.com:blaster32blaster/customer-manager.git
+- set up local host and webserver
+- navigate to root project directory
+- Run Command : composer install
+- Run Command : npm install
+- navigate to project host

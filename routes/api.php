@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::resource('customer', \Api\CustomerController::class);
+
+Route::resource('email', \Api\EmailController::class)->except('index', 'show');
+
+Route::resource('address', \Api\AddressController::class)->except('index', 'show');
+

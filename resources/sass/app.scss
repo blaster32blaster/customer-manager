@@ -1,1 +1,68 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  font-family: Inconsolata;
+}
+
+h2 {
+  text-align: center;
+}
+
+.customers-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 2px ridge gainsboro;
+  margin-bottom: 1rem;
+}
+
+.customers-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.new-customer-button {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+.customer-name {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.customer-wrapper {
+  margin-bottom: .6rem;
+}
+
+.customer-address {
+  margin-top: 2rem;
+}
+
+.address-buttons {
+  margin-top: 2rem;
+}
+
+.email-buttons {
+  margin-top: 2rem;
+}
+
+.customer-email{
+  margin-top: 2rem;
+}

@@ -11,6 +11,9 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('customer');
 });
+
+Route::resource('customer', \CustomerController::class)->only('index', 'create', 'store');
